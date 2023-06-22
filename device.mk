@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2021 PixysOS
+# Copyright (C) 2022 Evolution X
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -21,12 +21,15 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-evolution \
     $(LOCAL_PATH)/overlay
 
-# RRO (pixys)
+# RRO (evo)
 PRODUCT_PACKAGES += \
-    PixysFrameworksSpacewar \
-    PixysSystemUISpacewar
+    EvolutionFrameworksResSpacewar \
+    EvolutionSettingsProviderResSpacewar \
+    EvolutionSettingsResSpacewar \
+    EvolutionSystemUIResSpacewar
 
 # RRO (Spacewar)
 PRODUCT_PACKAGES += \
@@ -242,6 +245,12 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor
+
+# Enable blurs, hidden under dev option
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.supports_background_blur=1 \
+    persist.sys.sf.disable_blurs=1 \
+    ro.sf.blurs_are_expensive=1
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
