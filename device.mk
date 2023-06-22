@@ -366,7 +366,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.pn8x \
+    android.hardware.nfc@1.2-service \
     NfcNci \
     SecureElement \
     Tag
