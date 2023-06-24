@@ -386,8 +386,7 @@ PRODUCT_PACKAGES += \
 
 # Perf
 PRODUCT_PACKAGES += \
-    libpsi.vendor \
-    libtflite
+    vendor.qti.hardware.perf@2.2.vendor
 
 # IRQ balance config
 PRODUCT_COPY_FILES += \
