@@ -201,5 +201,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 CONFIG_IEEE80211AC := true
 CONFIG_IEEE80211AX := true
 
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Include the proprietary files BoardConfig.
 include vendor/nothing/Spacewar/BoardConfigVendor.mk
