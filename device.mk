@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    vendor/nxp/nfc \
     vendor/qcom/opensource/usb/etc
 
 # A/B
@@ -362,7 +363,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.pn8x \
+    android.hardware.nfc@1.2-service \
     NfcNci \
     SecureElement \
     Tag
