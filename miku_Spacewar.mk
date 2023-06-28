@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 Evolution X
+# Copyright (C) 2022 Miku
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -12,16 +12,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/nothing/Spacewar/device.mk)
 
 # Inherit some common Evolution X stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/miku/config/common_full_phone.mk)
 EVO_BUILD_TYPE := UNOFFICIAL
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_HAS_FOD := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+MIKU_GAPPS := true
+TARGET_MIKU_BOOST_FRAMEWORK_PLATFORM := lahaina
+
+MIKU_MASTER := shin32
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := evolution_Spacewar
+PRODUCT_NAME := miku_Spacewar
 PRODUCT_DEVICE := Spacewar
 PRODUCT_BRAND := Nothing
 PRODUCT_MODEL := A063

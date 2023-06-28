@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 Evolution X
+# Copyright (C) 2022 Miku
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -21,25 +21,8 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-evolution \
+    $(LOCAL_PATH)/overlay-miku \
     $(LOCAL_PATH)/overlay
-
-# RRO (evo)
-PRODUCT_PACKAGES += \
-    EvolutionFrameworksResSpacewar \
-    EvolutionSettingsProviderResSpacewar \
-    EvolutionSettingsResSpacewar \
-    EvolutionSystemUIResSpacewar
-
-# RRO (Spacewar)
-PRODUCT_PACKAGES += \
-    SpacewarCarrierConfig \
-    SpacewarFrameworks \
-    SpacewarSettingsProvider \
-    SpacewarSettings \
-    SpacewarSystemUI \
-    SpacewarTelephony \
-    WifiResCommon
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
