@@ -1,10 +1,13 @@
 #
-# Copyright (C) 2022 Evolution X
+# Copyright (C) 2018-2021 PixysOS
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 DEVICE_PATH := device/nothing/Spacewar
+
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -37,6 +40,12 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
 
+# Art
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := Spacewar
 TARGET_NO_BOOTLOADER := true
@@ -46,22 +55,27 @@ BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Kernel
+BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_CMDLINE := \
     androidboot.hardware=qcom \
-    androidboot.usbcontroller=a600000.dwc3 \
-    cgroup.memory=nokmem,nosocket \
-    loop.max_part=7 \
+    androidboot.memcg=1 \
     lpm_levels.sleep_disabled=1 \
     msm_rtb.filter=0x237 \
-    pcie_ports=compat \
     service_locator.enable=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
     swiotlb=0 \
-    ip6table_raw.raw_before_defrag=1 \
-    iptable_raw.raw_before_defrag=1
+    loop.max_part=7 \
+    cgroup.memory=nokmem,nosocket \
+    pcie_ports=compat \
+    iptable_raw.raw_before_defrag=1 \
+    ip6table_raw.raw_before_defrag=1
+
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
-BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7325
 TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig
 
@@ -105,7 +119,7 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.nothing
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/evolution/config/device_framework_matrix.xml
+    vendor/pixys/config/device_framework_matrix.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest_yupik.xml
 
@@ -193,8 +207,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 CONFIG_IEEE80211AC := true
 CONFIG_IEEE80211AX := true
-
-TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Include the proprietary files BoardConfig.
 include vendor/nothing/Spacewar/BoardConfigVendor.mk
