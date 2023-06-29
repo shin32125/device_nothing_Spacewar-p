@@ -24,9 +24,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-miku \
     $(LOCAL_PATH)/overlay
 
-PRODUCT_PACKAGES += \
-    MikuSettingsOverlay
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
