@@ -14,13 +14,10 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 # Inherit some common Miku UI stuff.
 $(call inherit-product, vendor/miku/build/product/miku_product.mk)
 TARGET_MIKU_BUILD_VARIANT := UNOFFICIAL
-EXTRA_UDFPS_ANIMATIONS := true
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_HAS_FOD := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 MIKU_GAPPS := true
-TARGET_MIKU_BOOST_FRAMEWORK_PLATFORM := lahaina
+# TARGET_MIKU_BOOST_FRAMEWORK_PLATFORM := lahaina
 
 MIKU_MASTER := shin32
 
