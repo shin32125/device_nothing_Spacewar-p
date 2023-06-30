@@ -17,6 +17,9 @@ MIKU_GAPPS := true
 
 MIKU_MASTER := shin32
 
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := miku_Spacewar
 PRODUCT_DEVICE := Spacewar
@@ -29,10 +32,3 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
-
-# Override device name
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
-    TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
-
-BUILD_FINGERPRINT := Nothing/Spacewar/Spacewar:12/SKQ1.211230.001/1673511218:user/release-keys
