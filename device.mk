@@ -22,8 +22,10 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-miku \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
