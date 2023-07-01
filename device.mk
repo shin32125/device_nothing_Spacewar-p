@@ -34,6 +34,14 @@ PRODUCT_PACKAGES += \
     SpacewarTelephony \
     WifiResCommon
 
+# Settings
+PRODUCT_PACKAGES += \
+    MikuDeviceSettingsOverlay
+
+# Frameworks
+PRODUCT_PACKAGES += \
+    MikuDeviceFrameworksOverlay
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
