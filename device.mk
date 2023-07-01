@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
     SpacewarFrameworks \
     SpacewarSettingsProvider \
     SpacewarSettings \
+    SpacewarNfc \
     SpacewarSystemUI \
     SpacewarTelephony \
     WifiResCommon
