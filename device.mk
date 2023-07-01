@@ -269,7 +269,7 @@ PRODUCT_PACKAGES += \
 
 # Glyph
 PRODUCT_PACKAGES += \
-    PixysGlyph
+    ParanoidGlyph
 
 # GPS
 PRODUCT_PACKAGES += \
