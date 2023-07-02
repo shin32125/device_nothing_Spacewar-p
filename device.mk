@@ -20,6 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
 # Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-miku \
     $(LOCAL_PATH)/overlay
