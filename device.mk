@@ -44,8 +44,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    vendor/nxp/nfc \
-    hardware/nxp \
     vendor/qcom/opensource/usb/etc
 
 # A/B
