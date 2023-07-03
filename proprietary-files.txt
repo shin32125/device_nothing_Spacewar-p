@@ -1110,13 +1110,6 @@ vendor/etc/media_profiles_yupik_v1.xml
 # Native public libraries
 vendor/etc/public.libraries.txt
 
-# NFC configs
-vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-nxp.conf
-
-# NFC firmware
-vendor/lib64/libpn557_fw.so
-
 # Perf (configs)
 vendor/etc/lm/AdaptLaunchFeature.xml
 vendor/etc/lm/AppClassifierFeature.xml
