@@ -27,6 +27,10 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+  # Remove some data cache
+    rm -rf /data/resource-cache/*
+    rm -rf /data/system/package_cache/*
+
 target=`getprop ro.board.platform`
 low_ram=`getprop ro.config.low_ram`
 if [ -f /sys/devices/soc0/soc_id ]; then
