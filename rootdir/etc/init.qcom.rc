@@ -34,8 +34,8 @@ import /vendor/etc/init/hw/init.qcom.factory.rc
 on early-init
 
   # Remove some data cache
-    rm -rf /data/resource-cache/*
-    rm -rf /data/system/package_cache/*
+    rm -rf /data/resource-cache
+    rm -rf /data/system/package_cache
 
   # create symlink for vendor mount points
     symlink /vendor/firmware_mnt /firmware
