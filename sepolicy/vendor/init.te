@@ -2,9 +2,3 @@ allow init debugfs_tracing_debug:dir mounton;
 
 # Allow init to set read_ahead_kb on /data partition
 allow init vendor_sysfs_scsi_host:file w_file_perms;
-
-# Allow read / write access to /data/resource-cache
-allow domain resource-cache_device:chr_file { getattr open read ioctl lock append write};
-
-# Allow read / write access to /data/system/package_cache
-allow domain package_cache_device:chr_file { getattr open read ioctl lock append write};
