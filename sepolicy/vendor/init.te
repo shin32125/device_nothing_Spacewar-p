@@ -2,3 +2,6 @@ allow init debugfs_tracing_debug:dir mounton;
 
 # Allow init to set read_ahead_kb on /data partition
 allow init vendor_sysfs_scsi_host:file rw_file_perms;
+
+allow init vendor_configs_file:dir mounton;
+allow init vendor_app_file:dir mounton;
