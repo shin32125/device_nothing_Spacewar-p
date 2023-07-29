@@ -7,6 +7,7 @@ use.voice.path.for.pcm.voip=true
 
 # Bluetooth
 persist.vendor.bluetooth.modem_nv_support=true
+persist.vendor.btstack.enable.lpa=true
 
 # Camera
 camera.disable_zsl_mode=true
