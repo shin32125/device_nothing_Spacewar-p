@@ -35,10 +35,7 @@ PRODUCT_PACKAGES += \
     EvolutionFrameworksResSpacewar \
     EvolutionSettingsProviderResSpacewar \
     EvolutionSettingsResSpacewar \
-    EvolutionSystemUIResSpacewar
-
-# RRO (Spacewar)
-PRODUCT_PACKAGES += \
+    EvolutionSystemUIResSpacewar \
     SpacewarCarrierConfig \
     SpacewarFrameworks \
     SpacewarSettingsProvider \
