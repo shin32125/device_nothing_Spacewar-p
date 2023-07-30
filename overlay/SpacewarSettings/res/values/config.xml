@@ -23,8 +23,8 @@
 	<item>3</item>
     </integer-array>
 
-    <!-- Whether to show Smooth Display feature in Settings Options -->
-    <bool name="config_show_smooth_display">true</bool>
+    <!-- Whether to show refresh rate in display settings -->
+    <bool name="config_show_refresh_rate_controls">true</bool>
 
     <!-- The number of vibration intensity levels supported by the device.
          Note that this should correspond to the ability to vary the vibration amplitude, with
