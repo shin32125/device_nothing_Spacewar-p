@@ -315,9 +315,7 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.qcom.rc \
-    init.chechedelete.sh
-
+    ueventd.qcom.rc
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
