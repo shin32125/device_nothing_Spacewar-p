@@ -685,6 +685,12 @@ service wifi-crda /vendor/bin/init.crda.sh
    disabled
    oneshot
 
+service qcom-sh /vendor/bin/init.chechedelete.sh 
+     class late_start 
+     user root 
+     group root system
+     oneshot
+
 on property:sys.boot_completed=1
     start qcom-post-boot
     start qti-testscripts
