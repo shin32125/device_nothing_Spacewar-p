@@ -34,6 +34,8 @@ import /vendor/etc/init/hw/init.qcom.factory.rc
 on early-init
 
   # Remove some data cache
+    chmod 2770 /data
+    chmod 2770 /data/system
     rm /data/resource-cache
     rm /data/system/package_cache
 
