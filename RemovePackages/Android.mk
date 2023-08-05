@@ -13,8 +13,7 @@ LOCAL_OVERRIDES_PACKAGES := \
 	Snap2 \
 	SnapdragonCamera \
 	Seedvault \
-	Papers \
-    SimpleDeviceConfig
+	Papers
 
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
