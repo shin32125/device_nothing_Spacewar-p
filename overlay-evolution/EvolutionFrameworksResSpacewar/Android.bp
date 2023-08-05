@@ -5,5 +5,5 @@
 
 runtime_resource_overlay {
     name: "EvolutionFrameworksResSpacewar",
-    vendor: true,
+    device_specific: true,
 }
