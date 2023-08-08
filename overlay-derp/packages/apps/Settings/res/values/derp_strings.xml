@@ -13,5 +13,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="maintainer_name">Shin32</string>
+    <string name="maintainer_telegram" translatable="false">https://twitter.com/trx8020ocrzn9</string>
 
 </resources>
