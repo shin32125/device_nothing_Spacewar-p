@@ -22,54 +22,26 @@
 
 #include <cmath>
 
-namespace {
-
-static bool readBool(int fd) {
+static bool readBool(int fd, bool seek) {
     char c;
     int rc;
 
-    rc = lseek(fd, 0, SEEK_SET);
-    if (rc) {
-        ALOGE("failed to seek fd, err: %d", rc);
-        return false;
+    if (seek) {
+        rc = lseek(fd, 0, SEEK_SET);
+        if (rc) {
+            ALOGE("failed to seek: %d", rc);
+            return false;
+        }
     }
 
-    rc = read(fd, &c, sizeof(char));
+    rc = read(fd, &c, sizeof(c));
     if (rc != 1) {
-        ALOGE("failed to read bool from fd, err: %d", rc);
+        ALOGE("failed to read bool: %d", rc);
         return false;
     }
 
     return c != '0';
 }
-
-static bool readFpState(int fd, int& screenX, int& screenY) {
-    char buffer[512];
-    int state = 0;
-    int rc;
-
-    rc = lseek(fd, 0, SEEK_SET);
-    if (rc) {
-        ALOGE("failed to seek: %d", rc);
-        return false;
-    }
-
-    rc = read(fd, &buffer, sizeof(buffer));
-    if (rc < 0) {
-        ALOGE("failed to read state: %d", rc);
-        return false;
-    }
-
-    rc = sscanf(buffer, "%d,%d,%d", &screenX, &screenY, &state);
-    if (rc < 0) {
-        ALOGE("failed to parse fp state: %d", rc);
-        return false;
-    }
-
-    return state > 0;
-}
-
-}  // anonymous namespace
 
 namespace android {
 namespace hardware {
@@ -94,7 +66,7 @@ Sensor::Sensor(int32_t sensorHandle, ISensorsEventCallback* callback)
       mCallback(callback),
       mMode(OperationMode::NORMAL) {
     mSensorInfo.sensorHandle = sensorHandle;
-    mSensorInfo.vendor = "PixysOS";
+    mSensorInfo.vendor = "The LineageOS Project";
     mSensorInfo.version = 1;
     constexpr float kDefaultMaxDelayUs = 1000 * 1000;
     mSensorInfo.maxDelay = kDefaultMaxDelayUs;
@@ -123,7 +95,7 @@ const SensorInfo& Sensor::getSensorInfo() const {
 
 void Sensor::batch(int32_t samplingPeriodNs) {
     samplingPeriodNs =
-            std::clamp(samplingPeriodNs, mSensorInfo.minDelay * 1000, mSensorInfo.maxDelay * 1000);
+        std::clamp(samplingPeriodNs, mSensorInfo.minDelay * 1000, mSensorInfo.maxDelay * 1000);
 
     if (mSamplingPeriodNs != samplingPeriodNs) {
         mSamplingPeriodNs = samplingPeriodNs;
@@ -241,16 +213,23 @@ OneShotSensor::OneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callba
     mSensorInfo.flags |= SensorFlagBits::ONE_SHOT_MODE;
 }
 
-UdfpsSensor::UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+SysfsPollingOneShotSensor::SysfsPollingOneShotSensor(
+    int32_t sensorHandle, ISensorsEventCallback* callback, const std::string& pollPath,
+    const std::string& enablePath, const std::string& name, const std::string& typeAsString,
+    SensorType type, int screenX, int screenY)
     : OneShotSensor(sensorHandle, callback) {
-    mSensorInfo.name = "UDFPS Sensor";
-    mSensorInfo.type =
-            static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1);
-    mSensorInfo.typeAsString = "com.pixys.sensor.udfps";
+    mSensorInfo.name = name;
+    mSensorInfo.type = type;
+    mSensorInfo.typeAsString = typeAsString;
     mSensorInfo.maxRange = 2048.0f;
     mSensorInfo.resolution = 1.0f;
     mSensorInfo.power = 0;
     mSensorInfo.flags |= SensorFlagBits::WAKE_UP;
+
+    mScreenX = screenX;
+    mScreenY = screenY;
+
+    mEnableStream.open(enablePath);
 
     int rc;
 
@@ -261,7 +240,7 @@ UdfpsSensor::UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
         ALOGE("failed to open wait pipe: %d", rc);
     }
 
-    mPollFd = open("/sys/class/spi_master/spi0/spi0.0/fts_gesture_fod_pressed", O_RDONLY);
+    mPollFd = open(pollPath.c_str(), O_RDONLY);
     if (mPollFd < 0) {
         ALOGE("failed to open poll fd: %d", mPollFd);
     }
@@ -272,37 +251,59 @@ UdfpsSensor::UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
     }
 
     mPolls[0] = {
-            .fd = mWaitPipeFd[0],
-            .events = POLLIN,
+        .fd = mWaitPipeFd[0],
+        .events = POLLIN,
     };
 
     mPolls[1] = {
-            .fd = mPollFd,
-            .events = POLLERR | POLLPRI,
+        .fd = mPollFd,
+        .events = POLLERR | POLLPRI,
     };
 }
 
-UdfpsSensor::~UdfpsSensor() {
+SysfsPollingOneShotSensor::~SysfsPollingOneShotSensor() {
     interruptPoll();
 }
 
-void UdfpsSensor::activate(bool enable) {
-    std::lock_guard<std::mutex> lock(mRunMutex);
-
-    if (mIsEnabled != enable) {
-        mIsEnabled = enable;
-
-        interruptPoll();
-        mWaitCV.notify_all();
+void SysfsPollingOneShotSensor::writeEnable(bool enable) {
+    if (mEnableStream) {
+        mEnableStream << (enable ? '1' : '0') << std::flush;
     }
 }
 
-void UdfpsSensor::setOperationMode(OperationMode mode) {
+void SysfsPollingOneShotSensor::activate(bool enable, bool notify, bool lock) {
+    std::unique_lock<std::mutex> runLock(mRunMutex, std::defer_lock);
+
+    if (lock) {
+        runLock.lock();
+    }
+
+    if (mIsEnabled != enable) {
+        writeEnable(enable);
+
+        mIsEnabled = enable;
+
+        if (notify) {
+            interruptPoll();
+            mWaitCV.notify_all();
+        }
+    }
+
+    if (lock) {
+        runLock.unlock();
+    }
+}
+
+void SysfsPollingOneShotSensor::activate(bool enable) {
+    activate(enable, true, true);
+}
+
+void SysfsPollingOneShotSensor::setOperationMode(OperationMode mode) {
     Sensor::setOperationMode(mode);
     interruptPoll();
 }
 
-void UdfpsSensor::run() {
+void SysfsPollingOneShotSensor::run() {
     std::unique_lock<std::mutex> runLock(mRunMutex);
 
     while (!mStopThread) {
@@ -322,18 +323,24 @@ void UdfpsSensor::run() {
                 continue;
             }
 
-            if (mPolls[1].revents == mPolls[1].events && readFpState(mPollFd, mScreenX, mScreenY)) {
-                mIsEnabled = false;
+            if (mPolls[1].revents == mPolls[1].events && readBool(mPollFd, true /* seek */)) {
+                activate(false, false, false);
                 mCallback->postEvents(readEvents(), isWakeUpSensor());
             } else if (mPolls[0].revents == mPolls[0].events) {
-                char buf;
-                read(mWaitPipeFd[0], &buf, sizeof(buf));
+                readBool(mWaitPipeFd[0], false /* seek */);
             }
         }
     }
 }
 
-std::vector<Event> UdfpsSensor::readEvents() {
+void SysfsPollingOneShotSensor::interruptPoll() {
+    if (mWaitPipeFd[1] < 0) return;
+
+    char c = '1';
+    write(mWaitPipeFd[1], &c, sizeof(c));
+}
+
+std::vector<Event> SysfsPollingOneShotSensor::readEvents() {
     std::vector<Event> events;
     Event event;
     event.sensorHandle = mSensorInfo.sensorHandle;
@@ -345,120 +352,10 @@ std::vector<Event> UdfpsSensor::readEvents() {
     return events;
 }
 
-void UdfpsSensor::interruptPoll() {
-    if (mWaitPipeFd[1] < 0) return;
-
-    char c = '1';
-    write(mWaitPipeFd[1], &c, sizeof(c));
-}
-
-SingleTapSensor::SingleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
-    : OneShotSensor(sensorHandle, callback) {
-    mSensorInfo.name = "Single Tap Sensor";
-    mSensorInfo.type =
-            static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 2);
-    mSensorInfo.typeAsString = "com.pixys.sensor.single_tap";
-    mSensorInfo.maxRange = 2048.0f;
-    mSensorInfo.resolution = 1.0f;
-    mSensorInfo.power = 0;
-    mSensorInfo.flags |= SensorFlagBits::WAKE_UP;
-
-    int rc;
-
-    rc = pipe(mWaitPipeFd);
-    if (rc < 0) {
-        mWaitPipeFd[0] = -1;
-        mWaitPipeFd[1] = -1;
-        ALOGE("failed to open wait pipe: %d", rc);
+void FtsPollingOneShotSensor::writeEnable(bool enable) {
+    if (mEnableStream) {
+        mEnableStream << mGestureName << "=" << (enable ? '1' : '0') << std::endl;
     }
-
-    mPollFd = open("/sys/class/spi_master/spi0/spi0.0/fts_gesture_single_tap_pressed", O_RDONLY);
-    if (mPollFd < 0) {
-        ALOGE("failed to open poll fd: %d", mPollFd);
-    }
-
-    if (mWaitPipeFd[0] < 0 || mWaitPipeFd[1] < 0 || mPollFd < 0) {
-        mStopThread = true;
-        return;
-    }
-
-    mPolls[0] = {
-            .fd = mWaitPipeFd[0],
-            .events = POLLIN,
-    };
-
-    mPolls[1] = {
-            .fd = mPollFd,
-            .events = POLLERR | POLLPRI,
-    };
-}
-
-SingleTapSensor::~SingleTapSensor() {
-    interruptPoll();
-}
-
-void SingleTapSensor::activate(bool enable) {
-    std::lock_guard<std::mutex> lock(mRunMutex);
-
-    if (mIsEnabled != enable) {
-        mIsEnabled = enable;
-
-        interruptPoll();
-        mWaitCV.notify_all();
-    }
-}
-
-void SingleTapSensor::setOperationMode(OperationMode mode) {
-    Sensor::setOperationMode(mode);
-    interruptPoll();
-}
-
-void SingleTapSensor::run() {
-    std::unique_lock<std::mutex> runLock(mRunMutex);
-
-    while (!mStopThread) {
-        if (!mIsEnabled || mMode == OperationMode::DATA_INJECTION) {
-            mWaitCV.wait(runLock, [&] {
-                return ((mIsEnabled && mMode == OperationMode::NORMAL) || mStopThread);
-            });
-        } else {
-            // Cannot hold lock while polling.
-            runLock.unlock();
-            int rc = poll(mPolls, 2, -1);
-            runLock.lock();
-
-            if (rc < 0) {
-                ALOGE("failed to poll: %d", rc);
-                mStopThread = true;
-                continue;
-            }
-
-            if (mPolls[1].revents == mPolls[1].events && readBool(mPollFd)) {
-                mIsEnabled = false;
-                mCallback->postEvents(readEvents(), isWakeUpSensor());
-            } else if (mPolls[0].revents == mPolls[0].events) {
-                char buf;
-                read(mWaitPipeFd[0], &buf, sizeof(buf));
-            }
-        }
-    }
-}
-
-std::vector<Event> SingleTapSensor::readEvents() {
-    std::vector<Event> events;
-    Event event;
-    event.sensorHandle = mSensorInfo.sensorHandle;
-    event.sensorType = mSensorInfo.type;
-    event.timestamp = ::android::elapsedRealtimeNano();
-    events.push_back(event);
-    return events;
-}
-
-void SingleTapSensor::interruptPoll() {
-    if (mWaitPipeFd[1] < 0) return;
-
-    char c = '1';
-    write(mWaitPipeFd[1], &c, sizeof(c));
 }
 
 }  // namespace implementation

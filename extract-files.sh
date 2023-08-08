@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=Spacewar
+DEVICE=phone1
 VENDOR=nothing
 
 # Load extract_utils and do some sanity checks
@@ -55,17 +55,11 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/etc/init/netmgrd.rc)
-            sed -i "/modprobe/d" "${2}"
-            ;;
-        vendor/lib64/hw/fingerprint.lahaina.so)
-            "${PATCHELF}" --set-soname "fingerprint.lahaina.so" "${2}"
+        system_ext/lib64/libwfdnative.so)
+            sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${2}"
             ;;
         vendor/lib64/libgf_hal.so)
             sed -i "s|ro.boot.flash.locked|ro.bootloader.locked|g" "${2}"
-            ;;
-        vendor/lib64/hw/com.qti.chi.override.so)
-            grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
             ;;
     esac
 }
