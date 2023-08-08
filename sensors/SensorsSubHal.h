@@ -50,8 +50,7 @@ class SensorsSubHal : public ISensorsSubHal, public ISensorsEventCallback {
 
     Return<Result> activate(int32_t sensorHandle, bool enabled);
 
-    Return<Result> batch(int32_t sensorHandle, int64_t samplingPeriodNs,
-                         int64_t maxReportLatencyNs);
+    Return<Result> batch(int32_t sensorHandle, int64_t samplingPeriodNs, int64_t maxReportLatencyNs);
 
     Return<Result> flush(int32_t sensorHandle);
 
@@ -73,7 +72,7 @@ class SensorsSubHal : public ISensorsSubHal, public ISensorsEventCallback {
     template <class SensorType>
     void AddSensor() {
         std::shared_ptr<SensorType> sensor =
-                std::make_shared<SensorType>(mNextHandle++ /* sensorHandle */, this /* callback */);
+            std::make_shared<SensorType>(mNextHandle++ /* sensorHandle */, this /* callback */);
         mSensors[sensor->getSensorInfo().sensorHandle] = sensor;
     }
 
