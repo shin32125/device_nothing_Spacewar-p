@@ -1,13 +1,13 @@
 #
-# Copyright (C) 2022 The Derp-AOSP Project
+# Copyright (C) 2022 Evolution X
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_phone1.mk
+    $(LOCAL_DIR)/evolution_Spacewar.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_phone1-eng \
-    derp_phone1-user \
-    derp_phone1-userdebug
+    evolution_Spacewar-eng \
+    evolution_Spacewar-user \
+    evolution_Spacewar-userdebug

@@ -1,8 +1,9 @@
 #
-# Copyright (C) 2022 The Nameless-AOSP Project
+# Copyright (C) 2018-2021 Evolution-X
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-BOARD_VENDOR_SEPOLICY_DIRS += device/nothing/phone1/sepolicy/vendor
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/nothing/phone1/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += device/nothing/Spacewar/sepolicy/vendor
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/nothing/Spacewar/sepolicy/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/nothing/Spacewar/sepolicy/private
