@@ -22,6 +22,7 @@
 #include <unistd.h>
 
 #include <condition_variable>
+#include <fstream>
 #include <memory>
 #include <mutex>
 #include <thread>
@@ -91,17 +92,24 @@ class OneShotSensor : public Sensor {
     virtual Result flush() override { return Result::BAD_VALUE; }
 };
 
-class UdfpsSensor : public OneShotSensor {
+class SysfsPollingOneShotSensor : public OneShotSensor {
   public:
-    UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback);
-    virtual ~UdfpsSensor() override;
+    SysfsPollingOneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callback,
+                              const std::string& pollPath, const std::string& enablePath,
+                              const std::string& name, const std::string& typeAsString,
+                              SensorType type, int screenX, int screenY);
+    virtual ~SysfsPollingOneShotSensor() override;
 
     virtual void activate(bool enable) override;
+    virtual void activate(bool enable, bool notify, bool lock);
+    virtual void writeEnable(bool enable);
     virtual void setOperationMode(OperationMode mode) override;
+    virtual std::vector<Event> readEvents() override;
 
   protected:
     virtual void run() override;
-    virtual std::vector<Event> readEvents();
+
+    std::ofstream mEnableStream;
 
   private:
     void interruptPoll();
@@ -114,24 +122,60 @@ class UdfpsSensor : public OneShotSensor {
     int mScreenY;
 };
 
-class SingleTapSensor : public OneShotSensor {
+const std::string kFtsPath = "/sys/class/spi_master/spi0/spi0.0/";
+const std::string kFtsGesturesPath = kFtsPath + "fts_gestures";
+
+class FtsPollingOneShotSensor : public SysfsPollingOneShotSensor {
   public:
-    SingleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback);
-    virtual ~SingleTapSensor() override;
+    FtsPollingOneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callback,
+                            const std::string& pollPath, const std::string& gestureName,
+                            const std::string& name, const std::string& typeAsString,
+                            SensorType type, int screenX, int screenY)
+        : SysfsPollingOneShotSensor(sensorHandle, callback, pollPath, kFtsGesturesPath, name,
+                                    typeAsString, type, screenX, screenY) {
+        mGestureName = gestureName;
+    }
 
-    virtual void activate(bool enable) override;
-    virtual void setOperationMode(OperationMode mode) override;
-
-  protected:
-    virtual void run() override;
-    virtual std::vector<Event> readEvents();
+    virtual void writeEnable(bool enable) override;
 
   private:
-    void interruptPoll();
+    std::string mGestureName;
+};
 
-    struct pollfd mPolls[2];
-    int mWaitPipeFd[2];
-    int mPollFd;
+const std::string kFodPressedPath = kFtsPath + "fts_gesture_fod_pressed";
+
+class UdfpsSensor : public FtsPollingOneShotSensor {
+  public:
+    UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+        : FtsPollingOneShotSensor(
+              sensorHandle, callback, kFodPressedPath, "fod", "UDFPS Sensor",
+              "org.lineageos.sensor.udfps",
+              static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1),
+              540, 1761) {}
+};
+
+const std::string kSingleTapPressedPath = kFtsPath + "fts_gesture_single_tap_pressed";
+
+class SingleTapSensor : public FtsPollingOneShotSensor {
+  public:
+    SingleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+        : FtsPollingOneShotSensor(
+              sensorHandle, callback, kSingleTapPressedPath, "single_click", "Single Tap Sensor",
+              "org.lineageos.sensor.single_tap",
+              static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 2),
+              -1, -1) {}
+};
+
+const std::string kDoubleTapPressedPath = kFtsPath + "fts_gesture_single_tap_pressed";
+
+class DoubleTapSensor : public FtsPollingOneShotSensor {
+  public:
+    DoubleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+        : FtsPollingOneShotSensor(
+              sensorHandle, callback, kDoubleTapPressedPath, "double_click", "Double Tap Sensor",
+              "org.lineageos.sensor.double_tap",
+              static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 2),
+              -1, -1) {}
 };
 
 }  // namespace implementation
