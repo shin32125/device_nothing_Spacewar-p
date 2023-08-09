@@ -1,4 +1,2 @@
 # Aware
 vendor_restricted_prop(vendor_aware_available_prop);
-# Fingerprint
-vendor_internal_prop(system_fingerprint_prop)
