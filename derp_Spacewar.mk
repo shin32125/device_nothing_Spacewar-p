@@ -20,8 +20,6 @@ EXTRA_UDFPS_ANIMATIONS := true
 # Bootanimation resolution.
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_EXCLUDE_BACKUPTOOL := true
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 2400
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Device identifier. This must come after all inclusions.
