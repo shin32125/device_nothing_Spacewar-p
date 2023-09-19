@@ -30,7 +30,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-evolution \
     $(LOCAL_PATH)/overlay
 
-# RRO (evo)
+# RRO (Spacewar)
 PRODUCT_PACKAGES += \
     EvolutionFrameworksResSpacewar \
     EvolutionSettingsProviderResSpacewar \
@@ -42,7 +42,8 @@ PRODUCT_PACKAGES += \
     SpacewarSettings \
     SpacewarSystemUI \
     SpacewarTelephony \
-    WifiResCommon
+    WifiResCommon \
+    BoostFrameworkOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -396,6 +397,11 @@ PRODUCT_PACKAGES += \
 # Perf
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2.vendor
+
+# Perf Jars
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
 
 # IRQ balance config
 PRODUCT_COPY_FILES += \
