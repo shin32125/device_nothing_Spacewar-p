@@ -105,9 +105,9 @@ TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
 
 # Display
 SOONG_CONFIG_qtidisplay_udfps := true
-TARGET_SCREEN_DENSITY := 420
-
-include hardware/qcom-caf/sm8350/display/config/display-board.mk
+TARGET_SCREEN_DENSITY  := 420 
+TARGET_USES_COLOR_METADATA  := true 
+TARGET_USES_DISPLAY_RENDER_INTENTS  := true 
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
