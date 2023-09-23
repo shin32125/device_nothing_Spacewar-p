@@ -178,12 +178,6 @@ VENDOR_SECURITY_PATCH := 2022-11-01
 include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 include $(DEVICE_PATH)/sepolicy/SEPolicy.mk
 
-# Soong
-SOONG_CONFIG_NAMESPACES += androidBluetoothVars
-SOONG_CONFIG_androidBluetoothVars += \
-    le_disable_read_buffer_size_and_set_host
-SOONG_CONFIG_androidBluetoothVars_le_disable_read_buffer_size_and_set_host ?= true
-
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
