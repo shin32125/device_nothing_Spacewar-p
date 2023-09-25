@@ -144,7 +144,7 @@
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.
          The path is assumed to be specified in display coordinates with pixel units and in
-         the display's native orientation, with the origin of the coordinate system at the
+         the displays native orientation, with the origin of the coordinate system at the
          center top of the display.
          To facilitate writing device-independent emulation overlays, the marker `@dp` can be
          appended after the path string to interpret coordinates in dp instead of px units.
