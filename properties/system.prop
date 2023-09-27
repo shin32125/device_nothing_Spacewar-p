@@ -8,9 +8,6 @@ use.voice.path.for.pcm.voip=true
 # Bluetooth
 persist.vendor.bluetooth.modem_nv_support=true
 persist.vendor.btstack.enable.lpa=true
-persist.vendor.btstack.enable.twsplus=true
-persist.vendor.btstack.enable.twsplussho=true
-persist.vendor.bt.a2dp.hal.implementation=true
 
 # Camera
 camera.disable_zsl_mode=true
