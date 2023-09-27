@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <compositionengine/UdfpsExtension.h>
+
 #if __has_include(<display/drm/sde_drm.h>)
 #include <display/drm/sde_drm.h>
 #elif __has_include(<drm/sde_drm.h>)
