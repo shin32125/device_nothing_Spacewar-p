@@ -55,7 +55,7 @@ vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio.hal.output.suspend.supported=true
 vendor.audio.hw.aac.encoder=true
-vendor.audio.offload.buffer.size.kb=256
+vendor.audio.offload.buffer.size.kb=32
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.offload.track.enable=true
@@ -66,12 +66,6 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.voice.path.for.pcm.voip=true
-ro.audio.usb.period_us=20375
-af.resampler.quality=7
-ro.audio.resampler.psd.stopband=132
-ro.audio.resampler.psd.halflength=960
-ro.audio.resampler.psd.cutoff_percent=98
-ro.audio.resampler.psd.tbwcheat=0
 
 # Bluetooth
 persist.vendor.bt.a2dp.aac_whitelist=false
