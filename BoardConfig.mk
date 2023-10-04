@@ -81,10 +81,6 @@ BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_SOURCE := kernel/nothing/sm7325
 TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig
 
-# Platform
-BOARD_VENDOR := nothing
-TARGET_BOARD_PLATFORM := lahaina
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
@@ -154,7 +150,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Platform
 BOARD_VENDOR := nothing
 TARGET_BOARD_PLATFORM := lahaina
-BOARD_USES_QCOM_HARDWARE := true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
