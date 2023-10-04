@@ -439,17 +439,13 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libvndfwk_detect_jni.qti.vendor
 
-# QTI service tracker
+# RenderScript
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.2.vendor
+    android.hardware.renderscript@1.0-impl
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
-
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
 
 # RIL
 PRODUCT_PACKAGES += \
