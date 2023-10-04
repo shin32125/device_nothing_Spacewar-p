@@ -94,7 +94,7 @@ Sensor::Sensor(int32_t sensorHandle, ISensorsEventCallback* callback)
       mCallback(callback),
       mMode(OperationMode::NORMAL) {
     mSensorInfo.sensorHandle = sensorHandle;
-    mSensorInfo.vendor = "PixysOS";
+    mSensorInfo.vendor = "The LineageOS Project";
     mSensorInfo.version = 1;
     constexpr float kDefaultMaxDelayUs = 1000 * 1000;
     mSensorInfo.maxDelay = kDefaultMaxDelayUs;
@@ -246,7 +246,7 @@ UdfpsSensor::UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
     mSensorInfo.name = "UDFPS Sensor";
     mSensorInfo.type =
             static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1);
-    mSensorInfo.typeAsString = "com.pixys.sensor.udfps";
+    mSensorInfo.typeAsString = "org.lineageos.sensor.udfps";
     mSensorInfo.maxRange = 2048.0f;
     mSensorInfo.resolution = 1.0f;
     mSensorInfo.power = 0;
@@ -357,7 +357,7 @@ SingleTapSensor::SingleTapSensor(int32_t sensorHandle, ISensorsEventCallback* ca
     mSensorInfo.name = "Single Tap Sensor";
     mSensorInfo.type =
             static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 2);
-    mSensorInfo.typeAsString = "com.pixys.sensor.single_tap";
+    mSensorInfo.typeAsString = "org.lineageos.sensor.single_touch";
     mSensorInfo.maxRange = 2048.0f;
     mSensorInfo.resolution = 1.0f;
     mSensorInfo.power = 0;
