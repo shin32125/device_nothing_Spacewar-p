@@ -292,7 +292,7 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-Spacewar \
+    android.hardware.health@2.1-impl-qti \
     android.hardware.health@2.1-service
 
 # HIDL
@@ -397,11 +397,6 @@ PRODUCT_PACKAGES += \
     libOmxG711Enc \
     libOmxQcelp13Enc \
     libstagefrighthw
-
-# Perf
-PRODUCT_PACKAGES += \
-    libpsi.vendor \
-    libtflite
 
 # IRQ balance config
 PRODUCT_COPY_FILES += \
