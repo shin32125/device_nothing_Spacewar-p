@@ -22,6 +22,7 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_ENABLE_BLUR := true
 TARGET_SUPPORTS_TOUCHGESTURES := true
 TARGET_USES_PICO_GAPPS := true
+TARGET_USES_NOTHING_CAMERA := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := evolution_Spacewar
