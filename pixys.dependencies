@@ -15,5 +15,9 @@
     "repository": "vendor_nothing_camera",
     "target_path": "vendor/nothing/camera",
     "remote": "pixys-gitlab"
+  },
+  {
+    "repository": "android_hardware_nothing",
+    "target_path": "hardware/nothing"
   }
 ]
