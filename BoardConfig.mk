@@ -151,6 +151,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Platform
 BOARD_VENDOR := nothing
 TARGET_BOARD_PLATFORM := lahaina
+BOARD_USES_QCOM_HARDWARE :=true
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
