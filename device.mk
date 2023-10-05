@@ -403,6 +403,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+# Perf
+PRODUCT_PACKAGES += \
+    libpsi.vendor \
+    libtflite
+
 # Perfd (dummy)
 PRODUCT_PACKAGES += \
     libqti-perfd-client
