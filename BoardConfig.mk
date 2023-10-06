@@ -151,6 +151,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
+BOARD_VENDOR := nothing
 BOARD_USES_QCOM_HARDWARE := true
 
 # Properties
