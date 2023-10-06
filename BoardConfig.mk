@@ -122,7 +122,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     vendor/evolution/config/device_framework_matrix.xml
 
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest_yupik.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
