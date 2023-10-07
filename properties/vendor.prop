@@ -95,6 +95,7 @@ persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 ro.bluetooth.a2dp_offload.supported=true
 bluetooth.device.default_name=Nothing Phone (1)
+persist.bluetooth.sbc_hd_higher_bitrate=1
 
 # Crypto
 ro.crypto.dm_default_key.options_format.version=2
