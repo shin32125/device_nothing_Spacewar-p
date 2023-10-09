@@ -2,6 +2,9 @@
 dalvik.vm.dex2oat-filter=everything
 dalvik.vm.image-dex2oat-filter=everything
 
+# Dex2oat
+dalvik.vm.systemuicompilerfilter=speed
+
 # Audio
 use.voice.path.for.pcm.voip=true
 
