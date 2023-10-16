@@ -999,7 +999,6 @@ vendor/etc/configstore/vpp.configstore.xml
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vppservice.rc
 vendor/etc/media/video_system_specs.json
-vendor/etc/media_yupik_v0/video_system_specs.json
 vendor/etc/media_yupik_v1/video_system_specs.json
 vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy
@@ -1078,23 +1077,16 @@ vendor/lib64/vendor.qti.hardware.vpp@2.0.so
 # Media configs
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
-vendor/etc/media_codecs_performance_yupik_v0.xml
 vendor/etc/media_codecs_performance_yupik_v1.xml
 vendor/etc/media_codecs_vendor_audio.xml
-vendor/etc/media_codecs_yupik_v0.xml
 vendor/etc/media_codecs_yupik_v1.xml
 vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_vendor.xml
-vendor/etc/media_profiles_yupik_v0.xml
 vendor/etc/media_profiles_yupik_v1.xml
 
 # Native public libraries
 vendor/etc/public.libraries.txt
-
-# NFC configs
-vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-nxp.conf
 
 # NFC firmware
 vendor/lib64/libpn557_fw.so
