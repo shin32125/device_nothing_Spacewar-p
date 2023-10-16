@@ -422,9 +422,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.nothing
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/pocket/privapp-permissions-pocketmode.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-pocketmode.xml
-
 # QMI
 PRODUCT_PACKAGES += \
     libjson
