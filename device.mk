@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     vendor/nxp/nfc \
+    SecureElement \
     hardware/nothing \
     hardware/google/interfaces \
     hardware/google/pixel \
