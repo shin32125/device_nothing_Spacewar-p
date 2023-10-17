@@ -47,7 +47,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    vendor/nxp/nfc \
     hardware/nothing \
     hardware/google/interfaces \
     hardware/google/pixel \
