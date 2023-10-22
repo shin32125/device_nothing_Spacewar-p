@@ -11,6 +11,7 @@ use.voice.path.for.pcm.voip=true
 # Bluetooth
 persist.vendor.bluetooth.modem_nv_support=true
 persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
 
 # Camera
 camera.disable_zsl_mode=true
