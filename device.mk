@@ -430,10 +430,6 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libvndfwk_detect_jni.qti.vendor
 
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
