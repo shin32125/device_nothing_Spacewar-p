@@ -8,6 +8,5 @@ soong_namespace {
     imports: [
         "hardware/qcom-caf/bootctrl",
         "hardware/nothing",
-        "hardware/google/interfaces",
     ],
 }
