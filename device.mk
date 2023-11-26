@@ -31,10 +31,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO (evo)
 PRODUCT_PACKAGES += \
-    EvolutionFrameworksResSpacewar \
-    EvolutionSettingsProviderResSpacewar \
-    EvolutionSettingsResSpacewar \
-    EvolutionSystemUIResSpacewar \
     SpacewarCarrierConfig \
     SpacewarFrameworks \
     SpacewarSettingsProvider \
