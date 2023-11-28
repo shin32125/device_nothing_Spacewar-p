@@ -154,6 +154,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 # Platform
+BOARD_VENDOR := nothing
 BOARD_USES_QCOM_HARDWARE := true
 
 # Properties
