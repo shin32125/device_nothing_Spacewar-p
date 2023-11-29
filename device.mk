@@ -280,7 +280,7 @@ PRODUCT_PACKAGES += \
 
 # Glyph
 PRODUCT_PACKAGES += \
-    ParanoidGlyphPhone1
+    ParanoidGlyph
 
 # GPS
 PRODUCT_PACKAGES += \
