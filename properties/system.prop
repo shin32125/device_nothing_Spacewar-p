@@ -1,18 +1,8 @@
-# ART
-dalvik.vm.dex2oat-filter=everything
-dalvik.vm.image-dex2oat-filter=everything
-
-# Dex2oat
-dalvik.vm.systemuicompilerfilter=speed
-
 # Audio
 use.voice.path.for.pcm.voip=true
 
 # Bluetooth
-persist.vendor.bt.a2dp.hal.implementation=true
 persist.vendor.bluetooth.modem_nv_support=true
-persist.vendor.btstack.enable.twsplus=true
-persist.vendor.btstack.enable.twsplussho=true
 
 # Camera
 camera.disable_zsl_mode=true
@@ -89,17 +79,6 @@ persist.dbg.volte_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 
-# Ram
-ro.config.fha_enable=true
-ro.sys.fw.bg_apps_limit=32
-ro.config.dha_cached_max=16
-ro.config.dha_empty_max=42
-ro.config.dha_empty_init=32
-ro.config.dha_lmk_scale=0.545
-ro.config.dha_th_rate=2.3
-ro.config.sdha_apps_bg_max=64
-ro.config.sdha_apps_bg_min=8
-
 # RmNet
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
@@ -109,16 +88,6 @@ persist.data.df.agg.dl_size=4096
 persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9
 persist.data.df.dev_name=rmnet_usb0
-
-# RIL Powersaving
-persist.radio.add_power_save=1
-pm.sleep_mode=1
-ro.ril.disable.power.collapse=0
-ro.ril.fast.dormancy.rule=1
-ro.ril.fast.dormancy.timeout=3
-ro.mot.eri.losalert.delay=100
-ro.vold.umsdirtyratio=20
-power.saving.mode=1
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
