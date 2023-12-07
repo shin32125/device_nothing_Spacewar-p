@@ -33,9 +33,6 @@ on early-init
     write /proc/sys/kernel/sched_boost 1
     wait /sys/devices/soc0/soc_id
 
-    # Start audio adsp rpc daemon at early init stage
-    start vendor.audioadsprpcd_audiopd
-
 on init
     # Scheduler uclamp
     mkdir /dev/cpuctl/foreground
@@ -102,12 +99,6 @@ on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
     # Enable WLAN cold boot calibration
     write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/fs_ready 1
-
-on post-fs-data
-    chmod 0660 /dev/pn553
-    chown nfc nfc /dev/pn553
-    mkdir /data/vendor/nfc 0777 nfc nfc
-    mkdir /data/vendor/nfc/param 0777 nfc nfc
 
 on early-boot
     start vendor.sensors
