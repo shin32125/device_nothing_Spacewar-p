@@ -25,7 +25,7 @@ $(call inherit-product, vendor/pixys/config/common_full_phone.mk)
 TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# PixysOS Properties
+# pixysOS Properties
 TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 #TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
