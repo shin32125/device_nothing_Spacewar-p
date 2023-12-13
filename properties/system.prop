@@ -121,6 +121,9 @@ power.saving.mode=1
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 
+# SurfaceFlinger
+ro.sf.skip_set_active_mode_when_off=1
+
 # Storage
 persist.sys.fuse.passthrough.enable=true
 
