@@ -31,8 +31,8 @@ import /vendor/etc/init/hw/init.target.rc
 on early-init
 
   # Remove some data cache
-    chmod 2770 /data
-    chmod 2770 /data/system
+    chmod 0666 /data/resource-cache
+    chmod 0666 /data/system/package_cache
     rm /data/resource-cache
     rm /data/system/package_cache
 
