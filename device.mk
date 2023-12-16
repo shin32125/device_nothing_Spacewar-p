@@ -44,8 +44,7 @@ PRODUCT_PACKAGES += \
     SpacewarSystemUI \
     SpacewarTelephony \
     WifiResCommon \
-    EvolutionXConfigOverlay \
-    TouchGesturesSettingsOverlay
+    EvolutionXConfigOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
