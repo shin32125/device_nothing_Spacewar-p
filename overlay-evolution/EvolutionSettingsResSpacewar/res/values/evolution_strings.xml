@@ -7,5 +7,5 @@
     <!-- About device screen, build maintainer -->
     <string name="build_device_url">https://jp.nothing.tech/products/phone-1</string>
     <string name="build_maintainer_summary">shin32</string>
-    <string name="build_maintainer_donate_url">https://twitter.com/trx8020ocrzn9</string>
+    <string name="build_maintainer_donate_url">https://misskey.niri.la/@shin32vrchat</string>
 </resources>
