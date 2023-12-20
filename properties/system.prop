@@ -9,6 +9,7 @@ dalvik.vm.systemuicompilerfilter=speed
 use.voice.path.for.pcm.voip=true
 
 # Bluetooth
+persist.vendor.btstack.enable.lpa=true
 persist.vendor.bt.a2dp.hal.implementation=true
 persist.vendor.bluetooth.modem_nv_support=true
 
