@@ -32,7 +32,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/rro_overlays
 
-# RRO (Spacewar)
+# RRO (evo)
 PRODUCT_PACKAGES += \
     EvolutionFrameworksResSpacewar \
     EvolutionSettingsProviderResSpacewar \
@@ -45,8 +45,7 @@ PRODUCT_PACKAGES += \
     SpacewarSystemUI \
     SpacewarTelephony \
     WifiResCommon \
-    EvolutionXConfigOverlay \
-    BoostFrameworkOverlay
+    EvolutionXConfigOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -403,16 +402,6 @@ PRODUCT_PACKAGES += \
     libOmxG711Enc \
     libOmxQcelp13Enc \
     libstagefrighthw
-
-# Perf
-PRODUCT_PACKAGES += \
-    libpsi.vendor \
-    libtflite
-
-# Perf Jars
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
 
 # IRQ balance config
 PRODUCT_COPY_FILES += \
