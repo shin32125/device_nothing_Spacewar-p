@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
     EvolutionSystemUIResSpacewar \
     SpacewarCarrierConfig \
     SpacewarFrameworks \
+    SpacewarNfc \
     SpacewarSettingsProvider \
     SpacewarSettings \
     SpacewarSystemUI \
