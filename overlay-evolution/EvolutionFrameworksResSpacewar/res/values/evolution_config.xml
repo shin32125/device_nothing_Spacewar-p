@@ -43,7 +43,7 @@
     <bool name="config_displayInversionAvailable">false</bool>
 
 <!-- Whether charging control should be enabled by default -->
-  <bool name="config_chargingControlEnabled">false</bool>
+  <bool name="config_chargingControlEnabled">true</bool>
   <!-- Default charging control mode.
        This integer should be set to:
        1 - auto - Use the alarm to calculate the time range when to activate charging control
