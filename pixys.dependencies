@@ -11,6 +11,11 @@
     "repository": "packages_apps_PixysGlyph",
     "target_path": "packages/apps/PixysGlyph"
   },
+  { 
+     "repository": "vendor_nothing_Spacewar_radio",
+     "target_path": "vendor/nothing/Spacewar/radio",
+     "remote": "pixys-gitlab"
+  },
   {
     "repository": "vendor_nothing_camera",
     "target_path": "vendor/nothing/camera",
