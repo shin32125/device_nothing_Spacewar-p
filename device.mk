@@ -20,7 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
 # Overlays
-PRODUCT_ENFORCE_RRO_TARGETS := *
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-evolution \
     $(LOCAL_PATH)/overlay \
@@ -263,7 +262,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/displayconfig/display_id_4630946480328692354.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946480328692354.xml
 
 # Dolby
-$(call inherit-product, hardware/dolby/dolby.mk)
+$(call inherit-product, vendor/dolby/dolby.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
