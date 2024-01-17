@@ -84,7 +84,6 @@ TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig vendor/debugfs.config
 # Platform
 BOARD_VENDOR := nothing
 TARGET_BOARD_PLATFORM := lahaina
-QCOM_HARDWARE_VARIANT := $(OVERRIDE_QCOM_HARDWARE_VARIANT)
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -180,7 +179,7 @@ VENDOR_SECURITY_PATCH := 2022-11-01
 
 # SELinux
 #SELINUX_IGNORE_NEVERALLOWS=true
-include device/qcom/sepolicy_vndr/legacy-um/SEPolicy.mk
+#include device/qcom/sepolicy_vndr/legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
