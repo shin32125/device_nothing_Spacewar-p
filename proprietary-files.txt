@@ -783,7 +783,6 @@ vendor/etc/seccomp_policy/gnss@2.0-xtra-daemon.policy
 vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy
 vendor/etc/seccomp_policy/gnss@2.0-xtwifi-inet-agent.policy
 vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
-vendor/etc/vintf/manifest/vendor.qti.gnss@4.2-service.xml
 vendor/lib/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib/libbatching.so
 vendor/lib/libgeofencing.so
@@ -792,7 +791,6 @@ vendor/lib/libgps.utils.so
 vendor/lib/libloc_core.so
 vendor/lib/liblocation_api.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
-vendor/lib64/hw/vendor.qti.gnss@4.2-impl.so
 vendor/lib64/libbatching.so
 vendor/lib64/libgeofencing.so
 vendor/lib64/libgnss.so
@@ -806,9 +804,6 @@ vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0.so
-vendor/lib64/vendor.qti.gnss@4.1.so
-vendor/lib64/vendor.qti.gnss@4.2-service.so
-vendor/lib64/vendor.qti.gnss@4.2.so
 
 # GPS
 vendor/app/CACertService/CACertService.apk
