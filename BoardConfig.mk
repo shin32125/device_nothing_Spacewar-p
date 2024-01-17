@@ -84,6 +84,7 @@ TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig vendor/debugfs.config
 # Platform
 BOARD_VENDOR := nothing
 TARGET_BOARD_PLATFORM := lahaina
+QCOM_HARDWARE_VARIANT := $(OVERRIDE_QCOM_HARDWARE_VARIANT)
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
