@@ -19,4 +19,7 @@
 
     <!-- Whether to show TouchGestures preference -->
     <bool name="config_supportsTouchGestures">true</bool>
+
+    <!-- Whether device supports increased touch sensitvity -->
+    <bool name="config_supportTouchPollingMode">true</bool>
 </resources>
