@@ -543,4 +543,3 @@ PRODUCT_BOOT_JARS += \
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat
-
