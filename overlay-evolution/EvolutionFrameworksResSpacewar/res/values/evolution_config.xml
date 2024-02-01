@@ -49,7 +49,7 @@
        1 - auto - Use the alarm to calculate the time range when to activate charging control
        2 - custom - Use time range when the device is usually charging for hours
        3 - limit - Just limit charging -->
-    <integer name="config_defaultChargingControlMode">1</integer>
+    <integer name="config_defaultChargingControlMode">2</integer>
     <!-- Default time when charging control is activated.
        Represented as seconds from midnight (e.g. 79200 == 10pm). -->
     <integer name="config_defaultChargingControlStartTime">79200</integer>
