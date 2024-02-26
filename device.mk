@@ -263,7 +263,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/displayconfig/display_id_4630946480328692354.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946480328692354.xml
 
 # Dolby
-$(call inherit-product, vendor/dolby/dolby.mk)
+$(call inherit-product, vendor/dolby/dolby-product.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
