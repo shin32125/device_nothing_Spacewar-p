@@ -22,8 +22,7 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-evolution \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/rro_overlays
+    $(LOCAL_PATH)/overlay
 
 # RRO (evo)
 PRODUCT_PACKAGES += \
@@ -38,8 +37,7 @@ PRODUCT_PACKAGES += \
     SpacewarSettings \
     SpacewarSystemUI \
     SpacewarTelephony \
-    WifiResCommon \
-    EvolutionXConfigOverlay
+    WifiResCommon
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
