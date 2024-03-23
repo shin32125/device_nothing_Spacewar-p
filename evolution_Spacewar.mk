@@ -25,7 +25,6 @@ TARGET_USES_PICO_GAPPS := true
 TARGET_USES_NOTHING_CAMERA := true
 TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_SHIPS_CUSTOM_DOLBY := true
-TARGET_DEVICE := Spacewar
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := evolution_Spacewar
@@ -36,7 +35,6 @@ PRODUCT_MANUFACTURER := Nothing
 PRODUCT_SYSTEM_NAME := Spacewar
 PRODUCT_SYSTEM_DEVICE := Spacewar
 PRODUCT_CHARACTERISTICS := nosdcard
-TARGET_RELEASE := Spacewar
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
