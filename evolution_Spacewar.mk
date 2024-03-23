@@ -13,6 +13,7 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 
 # Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+EVO_BUILD_TYPE := COMMUNITY
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
@@ -24,7 +25,6 @@ TARGET_USES_PICO_GAPPS := true
 TARGET_USES_NOTHING_CAMERA := true
 TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_SHIPS_CUSTOM_DOLBY := true
-EVO_SIGNED := false
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := evolution_Spacewar
@@ -35,6 +35,7 @@ PRODUCT_MANUFACTURER := Nothing
 PRODUCT_SYSTEM_NAME := Spacewar
 PRODUCT_SYSTEM_DEVICE := Spacewar
 PRODUCT_CHARACTERISTICS := nosdcard
+PRODUCT_RELEASE_NAME := Spacewar
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
