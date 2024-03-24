@@ -133,11 +133,13 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.soundtrigger@2.3-impl \
+    android.media.audio.common.types-V1-cpp \
     audio.bluetooth.default \
     audio.primary.lahaina \
     audio.r_submix.default \
     audio.usb.default \
     audioadsprpcd \
+    liba2dpoffload \
     libaudiopreprocessing \
     libbatterylistener \
     libbundlewrapper \
