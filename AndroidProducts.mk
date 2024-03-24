@@ -9,5 +9,5 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     evolution_Spacewar-eng \
-    evolution_Spacewar-user \
-    evolution_Spacewar-userdebug
+    evolution_Spacewar-userdebug \
+    evolution_Spacewar-user
