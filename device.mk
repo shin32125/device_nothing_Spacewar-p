@@ -21,15 +21,15 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-evolution \
     $(LOCAL_PATH)/overlay
 
-# RRO (pixys)
+# RRO (evo)
 PRODUCT_PACKAGES += \
-    PixysFrameworksSpacewar \
-    PixysSystemUISpacewar
-
-# RRO (Spacewar)
-PRODUCT_PACKAGES += \
+    EvolutionFrameworksResSpacewar \
+    EvolutionSettingsProviderResSpacewar \
+    EvolutionSettingsResSpacewar \
+    EvolutionSystemUIResSpacewar \
     SpacewarCarrierConfig \
     SpacewarFrameworks \
     SpacewarNfc \

@@ -1,13 +1,13 @@
 #
-# Copyright (C) 2018-2021 PixysOS
+# Copyright (C) 2022 Evolution X
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pixys_Spacewar.mk
+    $(LOCAL_DIR)/evolution_Spacewar.mk
 
 COMMON_LUNCH_CHOICES := \
-    pixys_Spacewar-eng \
-    pixys_Spacewar-userdebug \
-    pixys_Spacewar-user
+    evolution_Spacewar-eng \
+    evolution_Spacewar-userdebug \
+    evolution_Spacewar-user
