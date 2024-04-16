@@ -5,15 +5,8 @@ LOCAL_MODULE := RemovePackages
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_OVERRIDES_PACKAGES := \
-	Aperture \
-	Camera2 \
-	GrapheneOS-Camera \
-	NothingExperience \
-	Snap \
-	Snap2 \
-	SnapdragonCamera \
-	Seedvault \
-	Papers
+    WellbeingPrebuilt \
+    Wellbeing
 
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
