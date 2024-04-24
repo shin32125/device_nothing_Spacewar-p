@@ -1,4 +1,4 @@
-# All unpinned blobs are extracted from Spacewar-U2.5-240301-1852
+# All unpinned blobs are extracted from Spacewar-U2.5-240419-1617
 
 # ACDB
 vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
@@ -650,12 +650,10 @@ system/etc/sysconfig/preinstalled-packages-dirac.xml
 system/priv-app/DiracAudioControlService/DiracAudioControlService.apk
 system/priv-app/DiracAudioControlService_DMP/DiracAudioControlService_DMP.apk
 system/priv-app/NothingDiracService/NothingDiracService.apk
-vendor/etc/dirac/interfacedb
-vendor/etc/diracmobile.config
-vendor/etc/diracvdd.bin
-vendor/lib/libDiracAPI_SHARED.so
-vendor/lib/libdiracapwrapper.so
-vendor/lib/soundfx/libdiraceffect.so
+vendor/etc/dirac/dirac_resource.dar
+vendor/etc/dirac/interface.json
+vendor/lib/libdirac.so
+vendor/lib/soundfx/libdiraceffect-afm.so
 
 # Display Calibration data
 vendor/etc/qdcm_calib_data_rm692e5_amoled_fhd+_120hz_cmd_mode_dsi_visionox_panel.xml
@@ -1348,6 +1346,7 @@ vendor/lib64/qcrild_libqcrilnrutils.so|8fbc7b5ffcdf397a2c8fa3f46e6c107186d22211
 vendor/lib64/qtiril-utils.so|86578a04d450dea8e1589e1818553a265eeb78a7
 vendor/lib64/qtiwakelock.so|443804f2b7c5f5c0e707da18e77289156413f56e
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so|fa4e3dcb1367f4dce386ab0a91a549c4b8193615
+vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so|58f9c029bf75711b37ebfb3b733a3508ed8cad39
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so|df89f9182175c160553dc84cafe149dba42fe4a9
 vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so|63b5b7cf2a66dc714a01140fb2beacfed830ab30
 vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so|4b5ce03bb4c4e14dfd95a6dced2244700f327e08
@@ -1370,14 +1369,13 @@ vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so|5ff555c1f6c6e82ab21f6cb4f
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.5.so|68b7e74a999bb391621a677e65ce638a4e850d4a
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.6.so|61ca1281c023e7e3359bb26609693d3d577813a5
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.7.so|b375c29b1961bd00a5619e7430bc8f5d841b4b14
+vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so|b3a7ab5604d8f3d15806580be4be410db83e9730
+vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so|39343fa0745f4d0786160f3550b81948b8d75a7e
+vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so|0c88d5d9b1a72a67f40a34bf65eefbf7045c1d6a
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so|8ffcd1a0e478f46d17f659db679983c78113fe79
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so|444b879c119a74cda4784ab27fa4ccb853b2ae2b
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so|5bd93b3461b37c9ec7b10ae14b83781eb7556b27
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|cf9e2e22271a4091ba3c4c636ffc55f0d571ca42
-vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so|b3a7ab5604d8f3d15806580be4be410db83e9730
-vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so|39343fa0745f4d0786160f3550b81948b8d75a7e
-vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so|0c88d5d9b1a72a67f40a34bf65eefbf7045c1d6a
-vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so|58f9c029bf75711b37ebfb3b733a3508ed8cad39
 
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
