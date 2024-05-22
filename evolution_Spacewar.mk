@@ -13,10 +13,13 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 
 # Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+EVO_BUILD_TYPE := COMMUNITY
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_HAS_FOD := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_ENABLE_BLUR := true
 TARGET_SUPPORTS_TOUCHGESTURES := true
 TARGET_USES_PICO_GAPPS := true
 TARGET_USES_NOTHING_CAMERA := true
