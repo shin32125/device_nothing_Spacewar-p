@@ -13,6 +13,14 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 
 # Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+EXTRA_UDFPS_ANIMATIONS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_HAS_FOD := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_USES_PICO_GAPPS := true
+TARGET_USES_NOTHING_CAMERA := true
+TARGET_BUILD_APERTURE_CAMERA := false
+TARGET_DISABLE_EPPE := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := evolution_Spacewar
