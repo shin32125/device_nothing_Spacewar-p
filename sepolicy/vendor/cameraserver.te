@@ -1,2 +1,1 @@
 allow cameraserver property_socket:sock_file { read write };
-allow cameraserver vendor_persist_camera_prop:file { getattr open read map };
