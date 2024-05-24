@@ -1,5 +1,6 @@
 get_prop(platform_app, audio_config_prop)
 get_prop(platform_app, vendor_persist_camera_prop)
+allow cameraserver vendor_persist_camera_prop:file { getattr open read map };
 
 dontaudit platform_app default_android_hwservice:hwservice_manager { find };
 dontaudit platform_app hal_power_service:service_manager { find };
