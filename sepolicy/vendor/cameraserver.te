@@ -1,1 +1,3 @@
+type vendor_persist_camera_prop, property_type;
+
 allow cameraserver property_socket:sock_file { read write };
