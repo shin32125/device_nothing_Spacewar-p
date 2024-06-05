@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "EvolutionSystemUIResSpacewar",
+    name: "MikuSettingsProviderResSpacewar",
     product_specific: true,
 }

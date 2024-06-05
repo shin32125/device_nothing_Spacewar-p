@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_Spacewar.mk
+    $(LOCAL_DIR)/miku_Spacewar.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_Spacewar-eng \
-    evolution_Spacewar-userdebug \
-    evolution_Spacewar-user
+    miku_Spacewar-eng \
+    miku_Spacewar-userdebug \
+    miku_Spacewar-user
