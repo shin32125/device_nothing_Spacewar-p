@@ -26,6 +26,7 @@ TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_INCLUDE_CARRIER_SETTINGS := true
 TARGET_MIKU_BOOST_FRAMEWORK_PLATFORM := lahaina
 MIKU_MASTER := shin32
+MIKU_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := miku_Spacewar
