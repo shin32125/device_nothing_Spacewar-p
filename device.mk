@@ -21,10 +21,12 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-miku \
     $(LOCAL_PATH)/overlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # RRO (evo)
 PRODUCT_PACKAGES += \
+    MikuFrameworksResSpacewar \
+    MikuSettingsProviderResSpacewar \
+    MikuSettingsResSpacewar \
+    MikuSystemUIResSpacewar \
     SpacewarCarrierConfig \
     SpacewarFrameworks \
     SpacewarNfc \
