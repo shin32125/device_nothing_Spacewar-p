@@ -15,13 +15,8 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 $(call inherit-product, vendor/miku/build/product/miku_product.mk)
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_HAS_FOD := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_TOUCHGESTURES := true
 TARGET_USES_NOTHING_CAMERA := true
-TARGET_BUILD_APERTURE_CAMERA := false
-TARGET_INCLUDE_CARRIER_SETTINGS := true
 TARGET_MIKU_BOOST_FRAMEWORK_PLATFORM := lahaina
 MIKU_MASTER := shin32
 MIKU_GAPPS := true
