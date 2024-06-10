@@ -24,8 +24,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # RRO (pixys)
 PRODUCT_PACKAGES += \
-    PixysFrameworksSpacewar \
-    PixysSystemUISpacewar
+    MatrixxFrameworksSpacewar \
+    MatrixxSystemUISpacewar
 
 # RRO (Spacewar)
 PRODUCT_PACKAGES += \
