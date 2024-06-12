@@ -458,6 +458,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.voice-V1-ndk.vendor \
     android.hardware.radio-V1-ndk.vendor
 
+# Remove Packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
