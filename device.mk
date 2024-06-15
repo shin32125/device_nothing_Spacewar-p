@@ -20,8 +20,6 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # RRO (pixys)
 PRODUCT_PACKAGES += \
     MatrixxFrameworksSpacewar \
