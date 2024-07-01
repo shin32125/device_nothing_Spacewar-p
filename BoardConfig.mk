@@ -154,6 +154,9 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
+# PowerShare
+TARGET_POWERSHARE_NODE := /sys/class/qcom-battery/wireless_boost_en
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 
