@@ -68,6 +68,9 @@ function blob_fixup() {
         vendor/lib64/libgf_hal.so)
             sed -i "s|ro.boot.flash.locked|ro.bootloader.locked|g" "${2}"
             ;;
+        vendor/bin/sensors.qti | vendor/lib/mediadrm/libwvdrmengine.so | vendor/lib64/libsensorcal.so | vendor/lib64/libsnsapi.so | vendor/lib64/libsnsdiaglog.so | vendor/lib64/libssc.so | vendor/lib64/libwvhidl.so | vendor/lib64/mediadrm/libwvdrmengine.so | vendor/lib64/sensors.ssc.so)
+            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
+            ;;
         vendor/lib64/hw/com.qti.chi.override.so)
             grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
             ;;
