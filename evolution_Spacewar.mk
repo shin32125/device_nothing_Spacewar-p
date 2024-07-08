@@ -36,7 +36,7 @@ TARGET_INCLUDE_OEM_CAMERA := true
 TARGET_INCLUDE_CARRIER_SETTINGS := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := pixys_Spacewar
+PRODUCT_NAME := evolution_Spacewar
 PRODUCT_DEVICE := Spacewar
 PRODUCT_BRAND := Nothing
 PRODUCT_MODEL := A063
