@@ -34,6 +34,10 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_INCLUDE_OEM_CAMERA := true
 TARGET_INCLUDE_CARRIER_SETTINGS := true
+TARGET_USES_PICO_GAPPS := true
+TARGET_USES_NOTHING_CAMERA := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+PRODUCT_NO_CAMERA := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := evolution_Spacewar
@@ -49,5 +53,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 # Override device name
 PRODUCT_BUILD_PROP_OVERRIDES += \
+     PRIVATE_BUILD_DESC="Spacewar-user 14 UP1A.231005.007 2404191617 release-keys" \
     TARGET_DEVICE=Spacewar \
     TARGET_PRODUCT=Spacewar
+
+BUILD_FINGERPRINT := Nothing/qssi/qssi:14/UP1A.231005.007/2404191617:user/release-keys
