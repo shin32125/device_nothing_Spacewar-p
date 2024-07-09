@@ -34,7 +34,8 @@ PRODUCT_PACKAGES += \
     SpacewarSettings \
     SpacewarSystemUI \
     SpacewarTelephony \
-    WifiResCommon
+    WifiResCommon \
+    SpacewarDeviceAsWebcam
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
