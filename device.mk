@@ -282,6 +282,18 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss.visibility_control@1.0.vendor \
     android.hardware.gnss@2.1.vendor
 
+PRODUCT_PACKAGES += \
+    libutilscallstack.vendor \
+    libcurl.vendor \
+    libjsoncpp.vendor \
+    libsqlite.vendor \
+	libpng.vendor
+    libpng.vendor \
+    libcamera_metadata.vendor \
+    libexif.vendor \
+    libyuv.vendor \
+    libdumpstateutil.vendor
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-Spacewar \
