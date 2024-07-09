@@ -8,7 +8,7 @@
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/nothing/Spacewar/Spacewar-vendor.mk)
+$(call inherit-product, vendor/nothing/phone1/phone1-vendor.mk)
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
