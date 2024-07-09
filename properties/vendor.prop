@@ -130,6 +130,10 @@ persist.vendor.dpmhalservice.enable=1
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Nothing Features
+ro.vendor.nothing.feature.base=0x124a040124b4247b9fffL
+ro.vendor.nothing.feature.diff.device.Spacewar=0x2a4041a032c34000
+
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
