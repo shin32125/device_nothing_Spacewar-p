@@ -287,7 +287,6 @@ PRODUCT_PACKAGES += \
     libcurl.vendor \
     libjsoncpp.vendor \
     libsqlite.vendor \
-	libpng.vendor
     libpng.vendor \
     libcamera_metadata.vendor \
     libexif.vendor \
