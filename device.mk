@@ -41,8 +41,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    vendor/qcom/opensource/usb/etc \
-    hardware/lineage/interfaces
+    vendor/qcom/opensource/usb/etc
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
