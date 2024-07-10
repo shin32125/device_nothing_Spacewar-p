@@ -103,7 +103,7 @@ ro.crypto.volume.metadata.method=dm-default-key
 # Dirac
 ro.vendor.dirac.acs.forceAfm=true
 ro.vendor.dirac.startAtBoot=3
-ro.vendor.dirac.acs.storeSettings=1
+ro.vendor.dirac.acs.storeSettings=1 
 ro.vendor.dirac.acs.ignore_error=1
 ro.vendor.dirac.acs.startAtBoot=3
 
@@ -129,6 +129,10 @@ persist.vendor.dpmhalservice.enable=1
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Nothing Features
+ro.vendor.nothing.feature.base=0x124a040124b4247b9fffL
+ro.vendor.nothing.feature.diff.device.Spacewar=0x2a4041a032c34000
 
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
@@ -199,15 +203,14 @@ ro.soc.manufacturer=QTI
 
 # USB
 sys.usb.mtp.batchcancel=1
-ro.usb.uvc.enabled=true
-vendor.usb.diag.func.name=diag
+vendor.usb.diag.func.name=ffs
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.product_string=Nothing phone (1)
 vendor.usb.qdss.inst.name=qdss_sw
 vendor.usb.rmnet.func.name=gsi
 vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=gsi
-vendor.usb.use_ffs_mtp=0
+vendor.usb.use_ffs_mtp=1
 vendor.usb.use_gadget_hal=0
 
 # Zygote
