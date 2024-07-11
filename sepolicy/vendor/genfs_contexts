@@ -1,6 +1,9 @@
 # Battery
 genfscon sysfs /class/qcom-battery u:object_r:vendor_sysfs_battery_supply:s0
 
+# Charging Control
+genfscon sysfs /class/qcom-battery/charging_en u:object_r:vendor_sysfs_usb_supply:s0
+
 # Display
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary               u:object_r:vendor_sysfs_graphics:s0
 
