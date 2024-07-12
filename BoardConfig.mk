@@ -175,6 +175,7 @@ VENDOR_SECURITY_PATCH := 2022-11-01
 
 # SELinux
 #SELINUX_IGNORE_NEVERALLOWS=true
+include device/lineage/sepolicy/qcom/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
