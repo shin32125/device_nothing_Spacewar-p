@@ -1,5 +1,0 @@
-runtime_resource_overlay {
-    name: "SpacewarDeviceAsWebcam",
-    product_specific: true,
-    sdk_version: "current"
-}
