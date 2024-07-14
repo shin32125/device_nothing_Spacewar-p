@@ -22,8 +22,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO (pixys)
 PRODUCT_PACKAGES += \
-    PixysFrameworksSpacewar \
-    PixysSystemUISpacewar
+    MatrixxFrameworksSpacewar \
+    MatrixxSystemUISpacewar
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
