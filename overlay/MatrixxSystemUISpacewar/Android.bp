@@ -1,9 +1,9 @@
 //
-// Copyright (C) 2023 PixysOS
+// Copyright (C) 2023 Matrixx
 // SPDX-License-Identifier: Apache-2.0
 //
 
 runtime_resource_overlay {
-    name: "PixysFrameworksSpacewar",
+    name: "MatrixxSystemUISpacewar",
     system_ext_specific: true,
 }

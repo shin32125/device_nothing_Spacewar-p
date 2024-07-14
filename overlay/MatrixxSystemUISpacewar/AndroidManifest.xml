@@ -4,10 +4,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="android.overlay.pixys.spacewar">
+    package="com.android.systemui.overlay.matrixx.spacewar">
 
     <overlay
         android:isStatic="true"
-        android:priority="250"
-        android:targetPackage="android" />
+        android:priority="750"
+        android:targetPackage="com.android.systemui" />
 </manifest>
