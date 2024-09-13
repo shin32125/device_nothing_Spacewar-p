@@ -1,2 +1,4 @@
 # Aware
 vendor_restricted_prop(vendor_aware_available_prop);
+
+type vendor_persist_camera_prop, property_type;
