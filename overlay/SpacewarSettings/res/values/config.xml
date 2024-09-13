@@ -8,7 +8,7 @@
         <item>Alive</item>
         <item>Standard</item>
         <item>Boosted</item>
-	<item>Saturated</item>
+        <item>Saturated</item>
     </string-array>
 
     <!-- Display settings screen, Color mode options. Must be the same length and order as
