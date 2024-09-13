@@ -7,6 +7,9 @@
     <!-- NightLight FOD -->
     <bool name="disable_fod_night_light">true</bool>
 
+    <!-- Whether the device supports wireless charging or not -->
+    <bool name="config_deviceSupportsWirelessCharging">true</bool>
+
     <!-- The list of package IDs that are allowed to use aux cameras.
          NOTE: If this list is empty then all apps will be able to use aux cameras. -->
     <string-array name="config_cameraAuxPackageAllowList" translatable="false">
