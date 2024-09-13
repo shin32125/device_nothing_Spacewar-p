@@ -490,3 +490,6 @@ firmware_directories /vendor/firmware_mnt/image/ /mnt/vendor/persist/
 
 # Battery
 /sys/class/qcom-battery                                 charging_en                     0660    system  system
+
+# Charger
+/sys/class/power_supply/battery                         charging_enabled                 0660    system  system
