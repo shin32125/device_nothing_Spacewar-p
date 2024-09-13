@@ -18,17 +18,18 @@ $(call inherit-product, vendor/nothing/camera/nothing-camera.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-evolution \
     $(LOCAL_PATH)/overlay
 
-# RRO (pixys)
+# RRO (evo)
 PRODUCT_PACKAGES += \
-    MatrixxFrameworksSpacewar \
-    MatrixxSystemUISpacewar
+    EvolutionFrameworksResSpacewar \
+    EvolutionSettingsProviderResSpacewar \
+    EvolutionSettingsResSpacewar \
+    EvolutionSystemUIResSpacewar
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
-
-
 
 # RRO (Spacewar)
 PRODUCT_PACKAGES += \
