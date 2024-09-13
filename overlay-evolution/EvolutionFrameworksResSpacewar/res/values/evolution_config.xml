@@ -12,7 +12,7 @@
     <bool name="config_displayInversionAvailable">true</bool>
 
     <!-- Whether devices suports in-display fingerprint when screen is off -->
-    <bool name="config_supportScreenOffUdfps">false</bool>
+    <bool name="config_supportScreenOffUdfps">true</bool>
 
     <!-- Whether to use Richtap vibration -->
     <bool name="config_usesRichtapVibration">true</bool>
