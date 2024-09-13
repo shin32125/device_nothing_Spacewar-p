@@ -128,7 +128,7 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest_yupik.xml
 BOARD_USES_METADATA_PARTITION := true
 
 # Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/qcom-battery/charging_en
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/qcom-battery/battery/status
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
