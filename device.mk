@@ -406,6 +406,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.voice-V1-ndk.vendor \
     android.hardware.radio-V1-ndk.vendor
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
