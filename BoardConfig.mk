@@ -133,7 +133,7 @@ BOARD_USES_METADATA_PARTITION := true
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/qcom-battery/charging_en
 
 # Powershare
-TARGET_POWERSHARE_PATH := /sys/class/qcom-battery/wls_reverse_status
+TARGET_POWERSHARE_PATH := /sys/class/qcom-battery/wireless_boost_en
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
