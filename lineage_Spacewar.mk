@@ -14,6 +14,7 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_USES_PICO_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
