@@ -3,3 +3,6 @@ type fingerprint_data_file, data_file_type, file_type;
 
 # Vibrator
 type aac_richtap_dev_device, dev_type;
+
+# Charging
+type vendor_proc_wireless, fs_type, proc_type;
