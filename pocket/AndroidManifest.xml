@@ -46,7 +46,7 @@
     <application
         android:label="@string/pocketmode_short_title"
         android:persistent="true"
-		tools:replace="android:authorities">
+        tools:replace="android:authorities">
 
         <receiver android:name=".receiver.BootCompletedReceiver">
             <intent-filter>
