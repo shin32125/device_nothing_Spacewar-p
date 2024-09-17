@@ -8,6 +8,7 @@ LOCAL_OVERRIDES_PACKAGES := \
     WellbeingPrebuilt \
     Wellbeing \
     Aperture \
+    Seedvault \
     AudioFX
 
 LOCAL_UNINSTALLABLE_MODULE := true
