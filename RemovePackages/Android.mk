@@ -6,7 +6,9 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_OVERRIDES_PACKAGES := \
     WellbeingPrebuilt \
-    Wellbeing
+    Wellbeing \
+    Aperture \
+    AudioFX
 
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
