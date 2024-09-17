@@ -441,6 +441,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.default
 
+# RemovePackages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
