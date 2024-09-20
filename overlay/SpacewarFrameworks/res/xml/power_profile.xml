@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
-    <item name="screen.on.display0">102</item>
-    <item name="screen.full.display0">75</item>
+    <item name="screen.on">176</item>
+    <item name="screen.full">460</item>
     <array name="cpu.clusters.cores">
         <value>4</value>
         <value>3</value>
@@ -127,16 +127,16 @@
     <item name="wifi.on">0.5</item>
     <item name="wifi.active">417.4</item>
     <item name="wifi.scan">53</item>
-    <item name="audio">64</item>
-    <item name="video">31</item>
+    <item name="dsp.audio">64</item>
+    <item name="dsp.video">31</item>
     <item name="camera.flashlight">150</item>
     <item name="camera.avg">570</item>
     <item name="gps.on">61</item>
     <item name="radio.active">180</item>
     <item name="radio.scanning">4.7</item>
     <array name="radio.on">
-        <value>2</value>
-        <value>2</value>
+        <value>86</value>
+        <value>8</value>
     </array>
     <item name="modem.controller.idle">6</item>
     <item name="modem.controller.rx">180</item>
