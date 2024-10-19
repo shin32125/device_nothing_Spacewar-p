@@ -489,4 +489,5 @@ firmware_directories /vendor/firmware_mnt/image/ /mnt/vendor/persist/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
 
 # Battery
-/sys/class/qcom-battery                                 charging_en                     0660    system  system
+/sys/class/qcom-battery                                charging_en                     0644    system  system
+/sys/class/qcom-battery                                wls_reverse_status              0644    system  system
