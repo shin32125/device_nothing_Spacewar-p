@@ -134,7 +134,7 @@ TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/qcom-battery/charging
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # Powershare
-TARGET_POWERSHARE_PATH := /sys/class/qcom-battery/wireless_boost_en
+TARGET_POWERSHARE_PATH := /sys/class/qcom-battery/wls_reverse_status   
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
