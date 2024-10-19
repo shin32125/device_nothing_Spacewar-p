@@ -28,4 +28,7 @@
 
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_supportSmartPixels">true</bool>
+
+    <!-- Whether to show the Preference for Reverse Charging -->
+    <bool name="config_show_reverse_charging">true</bool>
 </resources>
