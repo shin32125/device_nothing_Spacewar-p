@@ -55,5 +55,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 # Override device name
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=Spacewar \
-    TARGET_PRODUCT=Spacewar
+    SystemDevice=Spacewar \
+    DeviceProduct=Spacewar
