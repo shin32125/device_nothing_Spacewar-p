@@ -23,6 +23,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO (Spacewar)
 PRODUCT_PACKAGES += \
+    PixysFrameworksSpacewar \
+    PixysSystemUISpacewar
+
+# RRO (Spacewar)
+PRODUCT_PACKAGES += \
     SpacewarCarrierConfig \
     SpacewarFrameworks \
     SpacewarNfc \
