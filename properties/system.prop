@@ -1,5 +1,7 @@
 # Audio
 use.voice.path.for.pcm.voip=true
+ro.config.media_vol_steps=100
+ro.config.vc_call_vol_steps=20
 
 # Bluetooth
 persist.vendor.bluetooth.modem_nv_support=true
