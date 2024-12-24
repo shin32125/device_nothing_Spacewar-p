@@ -223,3 +223,4 @@ CONFIG_IEEE80211AX := true
 
 # Include the proprietary files BoardConfig.
 include vendor/nothing/Spacewar/BoardConfigVendor.mk
+include hardware/qcom-caf/common/BoardConfigQcom.mk
