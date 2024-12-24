@@ -17,8 +17,6 @@ TARGET_BUILD_DEVICE_AS_WEBCAM=true
 #PRODUCT_PACKAGES += \
  #   RemovePackages
 
-# ViPER4AndroidFX
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
