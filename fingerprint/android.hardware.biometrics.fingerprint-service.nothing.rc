@@ -1,8 +1,7 @@
-on boot
-    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/force_fod_ui
-
 service vendor.fingerprint-nothing /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.nothing
     class late_start
     user system
     group system input uhid
+    interface aidl android.hardware.biometrics.fingerprint.IFingerprint/default
     shutdown critical
+    task_profiles ProcessCapacityHigh MaxPerformance
